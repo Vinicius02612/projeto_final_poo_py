@@ -4,12 +4,8 @@ from Pessoa import Pessoa
 
 class Doador(Pessoa):
     
-    def __init__(self, nome, sobreNome, email, endereco,telefone,senha ):
-        super().__init__(nome, sobreNome)
-        self._email = email
-        self._endereco = endereco
-        self._telefone = telefone
-        self._senha = senha
+    def __init__(self, nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone, senha):
+        super().__init__(nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone, senha)
 
     @property
     def email(self):
@@ -19,16 +15,82 @@ class Doador(Pessoa):
     def email(self, em):
         self._email = em
         return self._email
-    
+
+
+
     @property
-    def endereco(self):
-        return self._endereco
+    def nomeRua(self):
+        return super()._nomeRua
     
 
-    @endereco.setter
-    def endereco(self, end):
-        self._endereco = end
-        return self._endereco
+    @nomeRua.setter
+    def nomeRua(self, nr):
+        super()._nomeRua = nr
+        return self._nomeRua
+    
+
+
+    @property
+    def numeroDarua(self):
+        return super()._numeroRua
+    
+    @numeroDarua.setter
+    def numeroRua(self, num_rua):
+        super()._numeroRua = num_rua
+        return self._numeroRua
+
+
+    @property
+    def cep(self):
+        return super()._cep
+    
+    @cep.setter
+    def cep(self, cep):
+        super()._cep = cep
+        return self._cep
+
+
+    @property
+    def bairro(self):
+        return super()._bairro
+
+    @bairro.setter
+    def bairro(self, brr):
+        super()._bairro = brr
+        return super()._bairro
+
+
+
+    @property
+    def email(self):
+        return super()._email
+    
+    @email.setter
+    def email(self, email):
+        super()._email = email
+
+
+
+    @property
+    def telefone(self):
+        return super()._telefone
+
+    @telefone.setter
+    def telefone(self, telefone):
+        super()._telefone = telefone
+        return super()._telefone
+
+    @property
+    def senha(self):
+        return super()._senha
+    
+    @senha.setter
+    def senha(self, snh):
+        super()._senha = snh
+        return super()._senha
+    
+
+
 
     @property
     def senha(self):
