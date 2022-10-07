@@ -6,7 +6,10 @@
 <p align="justify">Pessoas que tem livros que já leram e não precisam mais de seus livros podem doa-los para outras pessoas que desejam ter a>oportunidade de ler, para doar um livro é necessário informar a quantidade, os autores dos livros, paginas, data de lançamentos, tempo de uso. Dos doadores deseja-se saber, o nome, e-mail e telefone para contato, endereço, se é um 	bom doador (se tem um bom histórico de doações e entregas). Uma pessoa pode  doar e também pode  receber livros. A doação de livro deve ser feita de forma grátis, sendo cobrado apenas o frete da entrega nos casos que os doadores e receptores morem distantes(cidades/estados diferentes) o frete deve ser pago pelos doadores, durante o cadastro de doação o doador deve informar se esta disponível para fazer entrega, caso o contrário o receptor deve se encarregar de buscar o livro.</p>
 
 
-2  -  Do desenvolvimento do sistema
+
+
+2  -  Do desenvolvimento do sistema<br> 
+
 
 • O sistema deve cadastrar os usuários (Doadores e Receptores) com informações como: nome e sobrenome, e-mail, informações de contato, endereço e senha;
       
@@ -21,6 +24,5 @@
 
 3 – Das ferramentas tecnológicas 
 	
-<p align="justify">O como será desenvolvido usando a linguagem python na versão 3.10.4, futuramente será incluídas mais tecnologias no decorrer do projeto como, ferramenta para  gerenciamento de banco de dados SGBD MYSQL ou outros, frameWorks para desenvolvimento  web.</p> 
 
-
+<p align="justify">O como será desenvolvido usando a linguagem python na versão 3.10.4, futuramente será incluídas mais tecnologias no decorrer do projeto como, ferramenta para  gerenciamento de banco de dados SGBD MYSQL ou outros, frameWorks para desenvolvimento  web.</p>
