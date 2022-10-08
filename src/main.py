@@ -3,51 +3,67 @@ from Doador import Doador
 from Receptor import Receptor
 from Livros import Livro
 
-
 import random
 
-dict_Doardor = {}
-dict_Receptor = {}
-dict_Livros = {}
-dict_Relatorio = {}
-
-#criar conta do usuário, aqui o usuário pode se cadastrar com doardor como receptor
-# o usuário deve ter um ID de intentificação 
+from Bookstory import Bookstory
 
 
-#nome, sobreNome, endereco, email,telefone, senha
-def criarConta():
-    print('Voce escolheu criar uma conta')
-    id = random.randint(000, 999)
-    nome =  input('Informe seu nome: ')
-    sobreNome = input('Seu sobrenome: ')
-    
-    
+
+book = Bookstory()
 
 
-#cadastrar livros
-def cadastrarLivros():
-    pass
-
-#listar livros cadastrados
-def listarLivros():
-    pass
-
-
-def doarLivros(receptor, livro):
-    pass
-
-
-d = Doador('Vinicus','Nunes','asdasdas@gmail.com','rua tal','1234567','00009283')
-c = Receptor('Jose','de morais', 'asdasdasd@gmail.com',' rua tal','1234-5677','123456')
-
-l = Livro('George.R.R Martin','Game Of Thrones',2,'12/02/2019','2 anos','4','6')
-
-""" p.get_pessoa() """
-
-d.get_dados_doador()
+def inserir_doador():
+    id = random.randint(000,999)
+    nome = input('Nome: ') 
+    sobreNome = input('Sobrenome: ')
+    nomeRua = input('Rua: ')
+    numeroDaRua = input('numero da rua: ')
+    cep = input('Cep: ') 
+    bairro = input('Bairro: ')
+    email = input('Email: ')
+    tel = input('Telefone: ')
 
 
-""" c.get_dados_receptor()
+    return book.cadastrar_Doador(id, nome, sobreNome,nomeRua, numeroDaRua, cep, bairro, email, tel)
 
-l.dados_dos_livros() """
+def inserir_receptor():
+    id = random.randint(000,999)
+    nome = input('Nome: ') 
+    sobreNome = input('Sobrenome: ')
+    nomeRua = input('Rua: ')
+    numeroDaRua = input('numero da rua: ')
+    cep = input('Cep: ') 
+    bairro = input('Bairro: ')
+    email = input('Email: ')
+    tel = input('Telefone: ')
+
+    return book.cadastrar_Receptor(id, nome, sobreNome,nomeRua, numeroDaRua, cep, bairro, email, tel)
+
+def inserir_livro():
+    idlivro = random.randint(000,999)
+    autor = input('Autor: ')
+    titulo = input('Titulo: ')
+    quantidade = input('Quantidade de Paginas: ')
+    data = input('data de lançamento: ')
+    tempoDeUso = input('Tempo de uso: ')
+    versao = input('Versão do Livro: ')
+    volume = input('Volume: ')
+
+    return book.cadastrar_livro(idlivro,autor,titulo,quantidade, data, tempoDeUso,versao, volume)
+
+
+
+while True:
+    print('1 - Inserir um doardor\n'
+          '2 - Inserir um Recptor\n'
+          '3 - Inserir um Livro\n'
+          '0 - Sair' )
+    opc = int(input('informa a opção desejada:'))
+    if opc == 1:
+        inserir_doador()
+    if opc == 2:
+        inserir_receptor()
+    if opc == 3:
+        inserir_livro()
+    if opc == 0:
+        break

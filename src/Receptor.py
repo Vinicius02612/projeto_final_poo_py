@@ -2,8 +2,8 @@ from Pessoa import Pessoa
 
 class Receptor(Pessoa):
 
-    def __init__(self,id, nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone, senha):
-        super().__init__(nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone, senha)
+    def __init__(self,id, nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone):
+        super().__init__(nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone)
         self._id = id
     
     @property
@@ -106,7 +106,17 @@ class Receptor(Pessoa):
         return super()._senha
     
 
-
     def get_dados_receptor(self):
         print('Dados do Doador:\n')
-        print(f'Nome: {self._nome}\n Sobre Nome: {self._sobreNome}\nEmail: {self._email}\nEndereco:{self._endereco}\nTelefone:{self._telefone}')
+        print(
+            f'ID: {self._id}\n'
+            f'Nome: {self._nome}\n'
+            f'Sobre Nome: {self._sobreNome}\n'
+            f'Nome da Rua: {self._nomeRua}\n'
+            f'Numero da Rua:{self._numeroRua}\n'
+            f'Cep:{self._cep}\n'
+            f'Bairro:{self._bairro}\n'
+            f'email:{self._email}\n'
+            f'Telefone:{self._telefone}\n'
+        )
+    
