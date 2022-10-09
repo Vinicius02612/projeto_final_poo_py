@@ -5,6 +5,7 @@ from Livros import Livro
 
 doador =Doador(0,'','','','','','','','','')
 receptor =Receptor(0,'','','','','','','','','')
+livro = Livro(0,'','','','','','','')
 class Bookstory:
 
     def __init__(self):
@@ -45,7 +46,7 @@ class Bookstory:
         receptor.email = email
         receptor.telefone = tel
         receptor.senha = senha
-        
+
         if id not in self._dict_Receptor.keys():
             self._dict_Receptor[id] = receptor
             return True, 'Receptor cadastrado com sucesso!'
@@ -53,7 +54,14 @@ class Bookstory:
             return False, 'Receptor ja cadastrado!'
     
     def cadastrar_livro(self,idlivro,autor,titulo,quantidade, dataLancamento, tempoDeUso,versao, volume):
-        livro = Livro(idlivro,autor,titulo,quantidade, dataLancamento, tempoDeUso,versao, volume)
+        livro.idlivro = idlivro
+        livro.autor = autor
+        livro.titulo = titulo
+        livro.quantidade = quantidade
+        livro.data = dataLancamento
+        livro.tempoDeUso = tempoDeUso
+        livro.versao = versao
+        livro._volume = volume
 
         if idlivro not in self._dict_Livros.keys():
             self._dict_Livros[id] = livro
@@ -63,7 +71,9 @@ class Bookstory:
     
     def buscar_livro(self, id):
         if id in self._dict_Livros.keys():
-            Livro.dados_do_livro()
+            for i in self._dict_Livros.values():
+                i.dados_do_livro()
     
-    def listar_livros(self):
-        print('')
+    def mostrar_livros(self):
+        for i in self._dict_Livros.values():
+            i.dados_do_livro()

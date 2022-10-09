@@ -82,4 +82,4 @@ class Livro:
     
 
     def dados_do_livro(self):
-        print(f'\nAutor: {self._autor}\nTitulo: {self._titulo}\nQuantidade: {self._quantidade}\nData de lançamento: {self._data}\nTempo de Uso: {self._tempoDeUso}\nVersão:{self._versao}\nVolume: {self._volume} ')
+        print(f'\nID: {self.idlivro}\nAutor: {self._autor}\nTitulo: {self._titulo}\nQuantidade: {self._quantidade}\nData de lançamento: {self._data}\nTempo de Uso: {self._tempoDeUso}\nVersão:{self._versao}\nVolume: {self._volume} ')

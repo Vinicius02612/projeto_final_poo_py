@@ -61,11 +61,17 @@ def procurar_livro():
     return book.buscar_livro(id)
 
 
+def listar_livros():
+    return book.mostrar_livros()
+
+
+
 while True:
     print('1 - Inserir um doardor\n'
           '2 - Inserir um Recptor\n'
           '3 - Inserir um Livro\n'
-          '4 - Procurar um livro\n'
+          '4 - Listar Livro\n'
+          '5 - Procurar um livro\n'
           '0 - Sair\n' )
     opc = int(input('informa a opção desejada:'))
     if opc == 1:
@@ -75,6 +81,8 @@ while True:
     if opc == 3:
         inserir_livro()
     if opc == 4:
+        listar_livros()
+    if opc == 5:
         procurar_livro()
     if opc == 0:
         break
