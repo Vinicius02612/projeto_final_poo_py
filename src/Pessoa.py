@@ -21,6 +21,8 @@ class Pessoa(ABC):
     def nome(self, n):
         self._nome = n
         return self._nome
+
+
         
     @property
     def sobreNome(self):
@@ -40,8 +42,6 @@ class Pessoa(ABC):
         self._nomeRua = nr
         return self._nomeRua
     
-
-
     @property
     def numeroDarua(self):
         return self._numeroRua
@@ -50,7 +50,6 @@ class Pessoa(ABC):
     def numeroRua(self, num_rua):
         self._numeroRua = num_rua
         return self._numeroRua
-
 
     @property
     def cep(self):
@@ -61,7 +60,6 @@ class Pessoa(ABC):
         self._cep = cep
         return self._cep
 
-
     @property
     def bairro(self):
         return self._bairro
@@ -70,7 +68,6 @@ class Pessoa(ABC):
     def bairro(self, brr):
         self._bairro = brr
         return self._bairro
-
 
 
     @property
@@ -100,8 +97,9 @@ class Pessoa(ABC):
     def senha(self, snh):
         self._senha = snh
         return self._senha
-   
-    def get_pessoa(self):
+
+    @abstractmethod
+    def get_dados(self):
         print(f'Nome: {self._nome}\nSobre Nome: {self._sobreNome}')
 
     def __repr__(self) -> str:

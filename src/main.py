@@ -22,13 +22,15 @@ def inserir_doador():
     bairro = input('Bairro: ')
     email = input('Email: ')
     tel = input('Telefone: ')
+    senha = input('Crie uma senha: ')
 
 
-    return book.cadastrar_Doador(id, nome, sobreNome,nomeRua, numeroDaRua, cep, bairro, email, tel)
+
+    return book.cadastrar_Doador(id, nome, sobreNome,nomeRua, numeroDaRua, cep, bairro, email, tel,senha)
 
 def inserir_receptor():
     id = random.randint(000,999)
-    nome = input('Nome: ') 
+    nome = input('Nome: ')
     sobreNome = input('Sobrenome: ')
     nomeRua = input('Rua: ')
     numeroDaRua = input('numero da rua: ')
@@ -36,8 +38,9 @@ def inserir_receptor():
     bairro = input('Bairro: ')
     email = input('Email: ')
     tel = input('Telefone: ')
+    senha = input('Crie um senha: ')
 
-    return book.cadastrar_Receptor(id, nome, sobreNome,nomeRua, numeroDaRua, cep, bairro, email, tel)
+    return book.cadastrar_Receptor(id, nome, sobreNome,nomeRua, numeroDaRua, cep, bairro, email, tel,senha)
 
 def inserir_livro():
     idlivro = random.randint(000,999)
@@ -52,12 +55,18 @@ def inserir_livro():
     return book.cadastrar_livro(idlivro,autor,titulo,quantidade, data, tempoDeUso,versao, volume)
 
 
+def procurar_livro():
+    id = int(input('informe o ID livro: '))
+
+    return book.buscar_livro(id)
+
 
 while True:
     print('1 - Inserir um doardor\n'
           '2 - Inserir um Recptor\n'
           '3 - Inserir um Livro\n'
-          '0 - Sair' )
+          '4 - Procurar um livro\n'
+          '0 - Sair\n' )
     opc = int(input('informa a opção desejada:'))
     if opc == 1:
         inserir_doador()
@@ -65,5 +74,7 @@ while True:
         inserir_receptor()
     if opc == 3:
         inserir_livro()
+    if opc == 4:
+        procurar_livro()
     if opc == 0:
         break

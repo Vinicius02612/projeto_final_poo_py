@@ -2,9 +2,10 @@ from Pessoa import Pessoa
 
 class Receptor(Pessoa):
 
-    def __init__(self,id, nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone):
+    def __init__(self,id, nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone,senha):
         super().__init__(nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone)
         self._id = id
+        self._senha = senha
     
     @property
     def id(self):
@@ -21,8 +22,13 @@ class Receptor(Pessoa):
     
     @nome.setter
     def nome(self, nome):
-        super().nome = nome
-        return super().nome
+
+        for i in nome:
+            if i.isdigit():
+                return False, 'Somente letrar podem ser digitadas'
+            else:
+                super().nome = nome
+                return super().nome
     
 
     @property
@@ -106,7 +112,7 @@ class Receptor(Pessoa):
         return super()._senha
     
 
-    def get_dados_receptor(self):
+    def get_dados(self):
         print('Dados do Doador:\n')
         print(
             f'ID: {self._id}\n'

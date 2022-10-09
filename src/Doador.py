@@ -4,9 +4,10 @@ from Pessoa import Pessoa
 
 class Doador(Pessoa):
     
-    def __init__(self, id,nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone):
+    def __init__(self, id,nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone,senha):
         super().__init__(nome, sobreNome, nomeRua,numeroDarua, cep,bairro , email,telefone)
         self._id = id
+        self._senha = senha
     
     @property
     def id(self):
@@ -107,7 +108,7 @@ class Doador(Pessoa):
         self._senha = senha
         return self._senha
     
-    def get_dados_doador(self):
+    def get_dados(self):
         print('Dados do Doador:\n')
         print(
             f'ID: {self._id}\n'
