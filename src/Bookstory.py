@@ -3,9 +3,6 @@ from Doador import Doador
 from Receptor import Receptor
 from Livros import Livro
 
-doador =Doador(0,'','','','','','','','','')
-receptor =Receptor(0,'','','','','','','','','')
-livro = Livro(0,'','','','','','','')
 class Bookstory:
 
     def __init__(self):
@@ -16,17 +13,8 @@ class Bookstory:
     
     def entrar_no_sistema():
         pass
-    def cadastrar_Doador(self,id, nome, sobreNome,nomeRua, numeroDaRua, cep, bairro, email, tel,senha):
-        doador.id = id
-        doador.nome = nome
-        doador.sobreNome = sobreNome
-        doador.nomeRua = nomeRua
-        doador.numeroDarua = numeroDaRua
-        doador.cep = cep
-        doador.bairro = bairro
-        doador.email = email
-        doador.telefone = tel
-        doador.senha = senha
+    def cadastrar_Doador(self,id, nome, sobreNome, email, tel,senha):
+        doador = Doador(id, nome, sobreNome, email, tel,senha)
 
         if id not in self._dict_Doador.keys():
             self._dict_Doador[id] = doador
@@ -35,17 +23,8 @@ class Bookstory:
             return False, 'Doador ja cadastrado!'
 
 
-    def cadastrar_Receptor(self,id, nome, sobreNome,nomeRua, numeroDaRua, cep, bairro, email, tel,senha):
-        receptor.id = id
-        receptor.nome = nome
-        receptor.sobreNome = sobreNome
-        receptor.nomeRua = nomeRua
-        receptor.numeroDarua = numeroDaRua
-        receptor.cep = cep
-        receptor.bairro = bairro
-        receptor.email = email
-        receptor.telefone = tel
-        receptor.senha = senha
+    def cadastrar_Receptor(self,id, nome, sobreNome, email, tel,senha):
+        receptor = Receptor(id, nome, sobreNome, email, tel,senha)
 
         if id not in self._dict_Receptor.keys():
             self._dict_Receptor[id] = receptor
@@ -53,27 +32,35 @@ class Bookstory:
         else:
             return False, 'Receptor ja cadastrado!'
     
-    def cadastrar_livro(self,idlivro,autor,titulo,quantidade, dataLancamento, tempoDeUso,versao, volume):
-        livro.idlivro = idlivro
-        livro.autor = autor
-        livro.titulo = titulo
-        livro.quantidade = quantidade
-        livro.data = dataLancamento
-        livro.tempoDeUso = tempoDeUso
-        livro.versao = versao
-        livro._volume = volume
+    def cadastrar_livro(self,idlivro,autor,titulo,quantidadePg):
+        livro = Livro(idlivro,autor,titulo,quantidadePg)
+        self._dict_Livros[id] = livro
 
-        if idlivro not in self._dict_Livros.keys():
-            self._dict_Livros[id] = livro
-            return True, 'Livro cadastrado com sucesso!'
-        else:
-            return False, 'Livro ja cadastrado!'
-    
+
+    def doar_livro(self, doador, livro, receptor):
+
+
+        pass
+
+    def listar_doardor(self):
+        for i in self._dict_Doador.values():
+            i.get_dados()
+
+    def listar_receptor(self):
+        for i in self._dict_Receptor.values():
+            i.get_dados()
+
     def buscar_livro(self, id):
-        if id in self._dict_Livros.keys():
-            for i in self._dict_Livros.values():
-                i.dados_do_livro()
+            for id ,i in self._dict_Livros.items():
+                print(f'{id} : {i}')
+
+            
     
     def mostrar_livros(self):
         for i in self._dict_Livros.values():
             i.dados_do_livro()
+    
+
+
+    def __str__(self) -> str:
+        return f'{self._dict_Doador}\n {self._dict_Receptor}\, {self._dict_Livros}\n'

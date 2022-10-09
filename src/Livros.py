@@ -6,15 +6,12 @@ volumes;
 
 class Livro:
 
-    def __init__(self, idlivro,autor,titulo,quantidade, dataLancamento, tempoDeUso,versao, volume):
+    def __init__(self, idlivro,autor,titulo,quantidade):
         self._idlivro = idlivro
         self._autor = autor
         self._titulo = titulo
         self._quantidade = quantidade
-        self._data = dataLancamento
-        self._tempoDeUso = tempoDeUso
-        self._versao = versao
-        self._volume = volume
+
     
     @property
     def idlivro(self):
@@ -51,35 +48,15 @@ class Livro:
     def quantidade(self, qntd):
         self._quantidade = qntd
         return self._quantidade
-    
-    @property
-    def data(self):
-        return self._data
-    
-    @data.setter
-    def data(self, dta):
-        self._data = dta
-        return self._data
-    
-    @property
-    def tempoDeUso(self):
-        return self._tempoDeUso
-    
-    @tempoDeUso.setter
-    def tempoDeUso(self, tmp):
-        self._tempoDeUso = tmp
-        return self._tempoDeUso
-    
 
-    @property
-    def versao(self):
-        return self._versao
-    
-    @versao.setter
-    def versao(self, vrs):
-        self._versao = vrs
-        return self._versao
-    
 
     def dados_do_livro(self):
-        print(f'\nID: {self.idlivro}\nAutor: {self._autor}\nTitulo: {self._titulo}\nQuantidade: {self._quantidade}\nData de lançamento: {self._data}\nTempo de Uso: {self._tempoDeUso}\nVersão:{self._versao}\nVolume: {self._volume} ')
+        print(
+            f'\nID: {self.idlivro}\n'
+            f'Autor: {self._autor}\n'
+            f'Titulo: {self._titulo}\n'
+            f'Quantidade de paginas: {self._quantidade}\n'
+        )
+
+    def __str__(self):
+        return f'\nID: {self.idlivro}\nAutor: {self._autor}\nTitulo: {self._titulo}\nQuantidade: {self._quantidade}\n'
